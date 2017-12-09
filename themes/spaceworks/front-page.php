@@ -72,7 +72,7 @@ jQuery(function($){
 		$('#homeslide-nav-dots a[data-dot=' + hsNum + ']').css('color','#000');
 		current_homeslide_color = $( '.homeslide:nth-of-type('+ hsNum +') .homeslide-content' ).css('background-color');
 		$('.homelogobox .logo').css('background-color', current_homeslide_color);
-		$('.homeslide:nth-of-type('+ hsNum +')').fadeIn( 'slow' );
+		$('.homeslide:nth-of-type('+ hsNum +')').fadeIn( 700 );
 		
 		
 	
