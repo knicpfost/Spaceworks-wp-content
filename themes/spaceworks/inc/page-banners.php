@@ -142,7 +142,7 @@ function page_banner_shortcode( $atts ) {
 	
 		$the_content = apply_filters( 'the_content', $post->post_content );
 		$the_title = $post->post_title;
-		$the_thumbnail_url = get_the_post_thumbnail_url( $post->ID );
+		$the_thumbnail_url = get_the_post_thumbnail_url( $post->ID, 'media_hd' );
  		$the_bg_color = get_field('background_color', $post->ID );
 		
 		$output = '<div class="pagebanner">';

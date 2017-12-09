@@ -161,7 +161,8 @@ add_action( 'wp_enqueue_scripts', 'spaceworks_scripts' );
 /**
  * Add media_featured Image Size
  */
-add_image_size( 'media_featured', '600', '300', true ); 
+add_image_size( 'media_featured', '600', '300', true );
+add_image_size( 'media_hd', '1920', '1920', false );
 
 
 /**
@@ -287,7 +288,7 @@ function ajax_post_layout( $first ) {
 	
 	if ( $first ) {
 		if ( has_post_thumbnail() ) {
-			echo '<a href="' . $permalink_url . '" style="background-image: url(' . get_the_post_thumbnail_url() . '); display: block; background-size: cover; background-position: top center; height: 300px; width: 100%;"></a>';
+			echo '<a href="' . $permalink_url . '" style="background-image: url(' . get_the_post_thumbnail_url('media_featured') . '); display: block; background-size: cover; background-position: top center; height: 300px; width: 100%;"></a>';
 		}
 	} else {
 		if ( has_post_thumbnail() ) {

@@ -158,7 +158,7 @@ jQuery(function($){
 			while ( $home_slides_query->have_posts() ) : $home_slides_query->the_post();
 		?>
 		<div class="homeslide homeslide-<?php echo $homeslide_number; $homeslide_number++; ?>">
-			<div class="homeslide-image" style="background-image: url(<?php the_post_thumbnail_url( 'full' ); ?>)"></div><!-- .homeslide-image -->
+			<div class="homeslide-image" style="background-image: url(<?php the_post_thumbnail_url( 'media_hd' ); ?>)"></div><!-- .homeslide-image -->
 			<div class="homeslide-image-attribution"><h6><?php the_field('homeslide_image_attribution'); ?></h6></div>
 			<div class="homeslide-content" style="background-color: <?php the_field('background_color'); ?>">
 				<div class="homeslide-content-inner">

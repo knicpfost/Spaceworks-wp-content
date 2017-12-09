@@ -157,7 +157,7 @@ function register_projects_shortcode( $atts ) {
 	
 			$output .= '<container class="project">';
 			
-				$output .= '<div class="project-image" style="background-image: url(' . get_the_post_thumbnail_url() . ')"></div>';
+				$output .= '<div class="project-image" style="background-image: url(' . get_the_post_thumbnail_url($post->ID, 'media_featured') . ')"></div>';
 				
 				$output .= '<div class="project-content">';
 					$output .= '<p><strong>' . get_the_title() . '</strong><br/>';
