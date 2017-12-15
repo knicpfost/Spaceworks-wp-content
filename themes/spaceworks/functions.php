@@ -288,7 +288,7 @@ function ajax_post_layout( $first ) {
 	
 	if ( $first ) {
 		if ( has_post_thumbnail() ) {
-			echo '<a href="' . $permalink_url . '" style="background-image: url(' . get_the_post_thumbnail_url('media_featured') . '); display: block; background-size: cover; background-position: top center; height: 300px; width: 100%;"></a>';
+			echo '<a href="' . $permalink_url . '" style="background-image: url(' . get_the_post_thumbnail_url( $post->ID, 'media_featured') . '); display: block; background-size: cover; background-position: top center; height: 300px; width: 100%;"></a>';
 		}
 	} else {
 		if ( has_post_thumbnail() ) {
@@ -313,6 +313,27 @@ function ajax_post_layout( $first ) {
 	echo '</article>';
 	
 }
+
+
+function auto_featured_image() {
+    global $post;
+ 
+    if (!has_post_thumbnail($post->ID)) {
+        $attached_image = get_children( "post_parent=$post->ID&amp;post_type=attachment&amp;post_mime_type=image&amp;numberposts=1" );
+         
+      if ($attached_image) {
+              foreach ($attached_image as $attachment_id => $attachment) {
+                   set_post_thumbnail($post->ID, $attachment_id);
+              }
+         }
+    }
+}
+// Used for new posts
+add_action('save_post', 'auto_featured_image');
+add_action('draft_to_publish', 'auto_featured_image');
+add_action('new_to_publish', 'auto_featured_image');
+add_action('pending_to_publish', 'auto_featured_image');
+add_action('future_to_publish', 'auto_featured_image');
 
 
 /**
