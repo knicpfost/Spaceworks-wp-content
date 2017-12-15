@@ -147,9 +147,7 @@ function page_banner_shortcode( $atts ) {
 		
 		$output = '<div class="pagebanner">';
 			if ( get_field('link_attach_check', $post->ID) ) :
-				$output .= '<a href="' . get_field('link_attach_url', $post->ID) . '">';
-				$output .= '<div class="pagebanner-image" style="background-image: url(' . $the_thumbnail_url . ');"></div>';
-				$output .= '</a>';
+				$output .= '<a class="pagebanner-image" href="' . get_field('link_attach_url', $post->ID) . '" style="background-image: url(' . $the_thumbnail_url . ');"></a>';
 			else :
 				$output .= '<div class="pagebanner-image" style="background-image: url(' . $the_thumbnail_url . ');"></div>';
 			endif;

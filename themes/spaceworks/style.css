@@ -765,7 +765,7 @@ h3.entry-title {margin-top: 0.4em; margin-bottom: 0.4em; }
 	.pagebanner.color-purple .pagebanner-content {background-color: #AD50D3; }
 	.pagebanner.color-orange .pagebanner-content {background-color: #F15A33; }
 	
-	.pagebanner-image {width: 50%; background-size: cover; background-position: center center; }
+	.pagebanner-image {display: block; width: 50%; background-size: cover; background-position: center center; }
 
 
 /*--------------------------------------------------------------
@@ -775,7 +775,7 @@ h3.entry-title {margin-top: 0.4em; margin-bottom: 0.4em; }
 .project {position: relative; display: inline-block; width: 30%; margin-bottom: 1em; margin-right: 2%; background-color: #E7E7E7; vertical-align: top; font-size: 0.9rem; }
 	.project:nth-of-type( 3n ) {margin-right: 0; }
 	
-	.project-image {width: 100%; height: 200px; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+	.project-image {display: block; width: 100%; height: 200px; background-size: cover; background-position: center center; background-repeat: no-repeat; }
 	
 	.project-content {padding: 1em; }
 	

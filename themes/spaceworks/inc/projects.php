@@ -158,9 +158,7 @@ function register_projects_shortcode( $atts ) {
 			$output .= '<container class="project">';
 				
 				if ( get_field('link_attach_check') ) :
-					$output .= '<a href="' . get_field('link_attach_url') . '">';
-					$output .= '<div class="project-image" style="background-image: url(' . get_the_post_thumbnail_url($post->ID, 'media_featured') . ')"></div>';
-					$output .= '</a>';
+					$output .= '<a class="project-image" href="' . get_field('link_attach_url') . '" style="background-image: url(' . get_the_post_thumbnail_url($post->ID, 'media_featured') . ')"></a>';
 				else :
 					$output .= '<div class="project-image" style="background-image: url(' . get_the_post_thumbnail_url($post->ID, 'media_featured') . ')"></div>';
 				endif;
