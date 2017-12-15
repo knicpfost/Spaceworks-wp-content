@@ -1046,7 +1046,8 @@ object {max-width: 100%; }
 	#menuToggle ul#primary-menu li a {font-size: 2.3em; }
 	#menuHolder form input[type="text"] {font-size: 1.1em; }
 	
-	.featured-buttons-bottom button {width: 100%; min-height: auto; }
+	.featured-buttons button,
+	.featured-buttons-bottom button {width: 100%; max-width: 100%; min-height: auto; }
 	
 	.project {width: auto; max-width: 100vw; margin: 0 0 1rem !important; }
 
