@@ -146,7 +146,13 @@ function page_banner_shortcode( $atts ) {
  		$the_bg_color = get_field('background_color', $post->ID );
 		
 		$output = '<div class="pagebanner">';
-			$output .= '<div class="pagebanner-image" style="background-image: url(' . $the_thumbnail_url . ');"></div>';
+			if ( get_field('link_attach_check', $post->ID) ) :
+				$output .= '<a href="' . get_field('link_attach_url', $post->ID) . '">';
+				$output .= '<div class="pagebanner-image" style="background-image: url(' . $the_thumbnail_url . ');"></div>';
+				$output .= '</a>';
+			else :
+				$output .= '<div class="pagebanner-image" style="background-image: url(' . $the_thumbnail_url . ');"></div>';
+			endif;
 			$output .= '<div class="pagebanner-content" style="background-color: ' . $the_bg_color . '; ">';
 			$output .= '<h3>' . $the_title . '</h3>';
 			$output .= '<div>' . $the_content . '</div>';

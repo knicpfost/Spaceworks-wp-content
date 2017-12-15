@@ -156,13 +156,19 @@ function register_projects_shortcode( $atts ) {
 		while ( $projects_query->have_posts() ) : $projects_query->the_post();
 	
 			$output .= '<container class="project">';
-			
-				$output .= '<div class="project-image" style="background-image: url(' . get_the_post_thumbnail_url($post->ID, 'media_featured') . ')"></div>';
+				
+				if ( get_field('link_attach_check') ) :
+					$output .= '<a href="' . get_field('link_attach_url') . '">';
+					$output .= '<div class="project-image" style="background-image: url(' . get_the_post_thumbnail_url($post->ID, 'media_featured') . ')"></div>';
+					$output .= '</a>';
+				else :
+					$output .= '<div class="project-image" style="background-image: url(' . get_the_post_thumbnail_url($post->ID, 'media_featured') . ')"></div>';
+				endif;
 				
 				$output .= '<div class="project-content">';
 					$output .= '<p><strong>' . get_the_title() . '</strong><br/>';
 					$output .= get_field('project_client') . '</p>';
-					$output .= '<div>' . get_the_content() . '</div>';
+					$output .= '<div>' . apply_filters('the_content', get_the_content() ) . '</div>';
 					if ( get_field('link_attach_check') ) :
 						$output .= '<p class="project-link link-attach"><a href="' . get_field('link_attach_url') . '">' . get_field('link_attach_label') . '</a></p>';
 					endif;
