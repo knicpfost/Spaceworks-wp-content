@@ -73,7 +73,27 @@ jQuery(function($){
 	});
 
 
+	/****************************/
+	/** Mini-blocks more button */
+	/****************************/
+	var std_miniblock_height = 33;
+	$('.miniblock .mini-content').each( function() {
+		var init_miniblock_height = $(this).height();
+		$(this).css({
+			'height': std_miniblock_height + 'em',
+			'overflow': 'hidden'
+		});
+		
+		if ( init_miniblock_height - std_miniblock_height > 0 ) {
+			$(this).addClass('collapsed');
+			$(this).append('<span class="expander">More</span>');
+		}
+	});
 	
+	$('.collapsed span.expander').click( function() {
+		$(this).parent('.collapsed').css('height', 'auto').addClass('opened').removeClass('collapsed');
+		$(this).remove();
+	});
 	
 	
 	/***********************/
