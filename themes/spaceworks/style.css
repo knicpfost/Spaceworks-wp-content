@@ -866,7 +866,7 @@ object {max-width: 100%; }
 	.media-sidebar {left: 10.5vw; }
 	
 	.project {width: 48%; }
-		..project:nth-of-type( 3n ) {margin-right: 2%; }
+		.project:nth-of-type( 3n ) {margin-right: 2%; }
 		.project:nth-of-type( 2n ) {margin-right: 0; }
 
 }
