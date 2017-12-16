@@ -336,6 +336,29 @@ add_action('pending_to_publish', 'auto_featured_image');
 add_action('future_to_publish', 'auto_featured_image');
 
 
+
+/**
+* Remove custom post types from the auto-link search list in Wordpress Content editor
+**/
+function custom_wp_link_query_args($query)
+{
+    $pt_new = array();
+ 
+    $exclude_types = array('sw_home_slides', 'pagebanners', 'projects'); // our list of custom post types to exclude from the query
+ 
+    foreach ($query['post_type'] as $pt)
+    {
+        if (in_array($pt, $exclude_types)) continue; // skip anything found in our exclude list
+        $pt_new[] = $pt; // add anything else back to the list
+    }
+ 
+    $query['post_type'] = $pt_new; // replace the list with our new one
+ 
+    return $query; // don't forget to return the $query array
+}
+add_filter('wp_link_query_args', 'custom_wp_link_query_args');
+
+
 /**
 * Add excerpt support for Pages, and then add those excerpts to the navigation
 **/
