@@ -76,11 +76,11 @@ jQuery(function($){
 	/****************************/
 	/** Mini-blocks more button */
 	/****************************/
-	var std_miniblock_height = 33;
+	var std_miniblock_height = 535;
 	$('.miniblock .mini-content').each( function() {
 		var init_miniblock_height = $(this).height();
 		$(this).css({
-			'height': std_miniblock_height + 'em',
+			'height': std_miniblock_height + 'px',
 			'overflow': 'hidden'
 		});
 		
