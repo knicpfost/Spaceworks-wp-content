@@ -76,7 +76,7 @@ jQuery(function($){
 	/****************************/
 	/** Mini-blocks more button */
 	/****************************/
-	var std_miniblock_height = 135;
+	var std_miniblock_height = 535;
 	$('.miniblock .mini-content').each( function() {
 		var init_miniblock_height = $(this).height();
 		$(this).css({
