@@ -850,7 +850,7 @@ object {max-width: 100%; }
 
 	.featured-buttons {position: relative; }
 	.featured-buttons a.button,
-	.featured-buttons-bottom a.button {width: auto; display: inline-block; margin-right: 10px; min-height: 3.6em; vertical-align: middle; }
+	.featured-buttons-bottom a.button {width: auto; display: inline-block; margin-right: 10px; vertical-align: middle; }
 
 }
 
