@@ -12,7 +12,7 @@ function button_shortcode( $atts , $content = null ) {
 		$atts
 	);
 	
-	$button = '<button style="background-color: ' . $atts['color'] . '"><a href="' . $atts['link'] . '">' . $content . '</a></button>';
+	$button = '<a class="button" href="' . $atts['link'] . '" style="background-color: ' . $atts['color'] . '">' . $content . '</a>';
 	
 	return $button;
 

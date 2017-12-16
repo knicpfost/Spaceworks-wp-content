@@ -142,16 +142,14 @@ input[type="button"],
 button:focus,
 input[type="button"]:focus,
 button:active,
-input[type="button"]:active {display: block; background: black; color: white; border: 0 none; font-weight: 200; min-height: 2rem; max-width: 13rem; border-radius: 6px; line-height: 1.1em; padding: 0.7em 0.9em; text-transform: uppercase; text-align: center; margin-bottom: 0.7em; }
-	button a,
-	button a:visited,
-	button a:hover,
-	button a:active {color: #fff; text-decoration: none; }
-	
-	button.highlight-yes {background: #401BD6; }
+input[type="button"]:active,
+a.button:link,
+a.button:visited,
+a.button:active {display: block; background: black; color: white; border: 0 none; font-weight: 200; min-height: 2rem; max-width: 13rem; border-radius: 6px; line-height: 1.1em; padding: 0.7em 0.9em; text-transform: uppercase; text-align: center; margin-bottom: 0.7em; color: #fff; text-decoration: none; }
 	
 	button:hover,
-	input[type="button"]:hover {opacity: 0.8; }
+	input[type="button"]:hover,
+	a.button:hover {opacity: 0.8; }
 
 img.alignnone,
 img.alignleft,
@@ -162,10 +160,10 @@ img.alignright,
 
 .entry-content {position: relative; }
 .featured-buttons {position: absolute; top: 0; right: 0; }
-	.featured-buttons button {width: 13rem; }
+	.featured-buttons a.button {width: 13rem; }
 
 .featured-buttons-bottom {position: relative; margin-top: 1.5em; }
-	.featured-buttons-bottom button {width: auto; display: inline-block; margin-right: 10px; vertical-align: middle; }
+	.featured-buttons-bottom a.button {width: auto; display: inline-block; margin-right: 10px; vertical-align: middle; }
 
 div#footerbar {margin: 65px 88px 0 108px; display: flex; flex-direction: row; justify-content: space-between; font-size: 0.9rem; border-top: 1px solid #ccc; padding-top: 1em; padding-bottom: 3em; }
 	div#footerbar .widget {flex-basis: auto; }
@@ -851,8 +849,8 @@ object {max-width: 100%; }
 @media (max-width: 1299px) { /* DESKTOP */
 
 	.featured-buttons {position: relative; }
-	.featured-buttons button,
-	.featured-buttons-bottom button {width: auto; display: inline-block; margin-right: 10px; min-height: 3.6em; vertical-align: middle; }
+	.featured-buttons a.button,
+	.featured-buttons-bottom a.button {width: auto; display: inline-block; margin-right: 10px; min-height: 3.6em; vertical-align: middle; }
 
 }
 
@@ -1046,8 +1044,8 @@ object {max-width: 100%; }
 	#menuToggle ul#primary-menu li a {font-size: 2.3em; }
 	#menuHolder form input[type="text"] {font-size: 1.1em; }
 	
-	.featured-buttons button,
-	.featured-buttons-bottom button {width: 100%; max-width: 100%; min-height: auto; }
+	.featured-buttons a.button,
+	.featured-buttons-bottom a.button {width: 100%; max-width: 100%; min-height: auto; }
 	
 	.project {width: auto; max-width: 100vw; margin: 0 0 1rem !important; }
 
