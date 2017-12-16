@@ -76,7 +76,7 @@ jQuery(function($){
 	/****************************/
 	/** Mini-blocks more button */
 	/****************************/
-	var std_miniblock_height = 535;
+	var std_miniblock_height = 135;
 	$('.miniblock .mini-content').each( function() {
 		var init_miniblock_height = $(this).height();
 		$(this).css({
@@ -86,7 +86,7 @@ jQuery(function($){
 		
 		if ( init_miniblock_height - std_miniblock_height > 0 ) {
 			$(this).addClass('collapsed');
-			$(this).append('<span class="expander">More</span>');
+			$(this).append('<span class="expander">Expand</span>');
 		}
 	});
 	

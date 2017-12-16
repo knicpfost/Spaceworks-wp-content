@@ -778,7 +778,7 @@ h3.entry-title {margin-top: 0.4em; margin-bottom: 0.4em; }
 	.project-content {padding: 1em; }
 
 .collapsed {position: relative; }
-.collapsed span.expander {display: block; position: absolute; bottom: 0; width: 100%; padding: 0.5em; cursor: pointer; background-color: #E7E7E7; }
+.collapsed span.expander {display: block; position: absolute; bottom: 0; left: 0; width: 100%; padding: 0.5em 1em; cursor: pointer; color: #E7E7E7; background-color: #1d1d1d; text-align: center; }
 	
 
 /*--------------------------------------------------------------
