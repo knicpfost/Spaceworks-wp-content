@@ -4,8 +4,7 @@
 						'Blog' => '/category/blog-post/',
 						'Press' => '/category/press/',
 						'Events' => '/category/event/',
-						'Videos' => '/tag/video/',
-						'950 Gallery' => '/category/gallery-950/'
+						'Videos' => '/tag/video/'
 					);
 ?>
 <div class="media-sidebar">

@@ -195,11 +195,11 @@ add_filter( 'get_the_archive_title', function ($title) {
 
     if ( is_category() ) {
 
-            $title = single_cat_title( '<span style="font-weight: 300;"></span>', false );
+            $title = single_cat_title( '<span class="title-contrast"></span>', false );
 
         } elseif ( is_tag() ) {
 
-            $title = single_tag_title( '<span style="font-weight: 300;">Filter:</span> ', false );
+            $title = single_tag_title( '<span class="title-contrast">Tag:</span> ', false );
 
         } elseif ( is_author() ) {
 

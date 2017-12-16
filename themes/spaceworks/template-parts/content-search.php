@@ -9,22 +9,24 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('masonry-item'); ?>>
+	<div class="masonry-item-content">
+		
+		<?php if ( has_post_thumbnail() ) { ?>
+			<?php echo '<a href="' . $permalink_url . '" rel="bookmark">'; ?>
+				<?php the_post_thumbnail('media_featured'); ?>
+			<?php echo '</a>'; ?>
+		<?php } ?>
+		<header class="entry-header">
+			<?php the_title( '<h3 class="entry-title"><a href="' . $permalink_url . '" rel="bookmark">', '</a></h3>' );
+			
+			if ( 'post' === get_post_type() ) : ?>			
+				<div class="entry-meta">
+					<?php spaceworks_media_meta(); ?>
+				</div><!-- .entry-meta -->
+			<?php
+			endif; ?>
+		</header><!-- .entry-header -->
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php spaceworks_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php spaceworks_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	</div><!-- .masonry-item-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

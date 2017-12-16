@@ -195,6 +195,8 @@ h4 {font-size: 1.6em; }
 h5 {font-size: 1.3em; }
 h6 {font-size: 1em; }
 
+span.title-contrast {font-weight: 300; }
+
 p {margin-bottom: 1.5em; }
 
 dfn,
@@ -238,11 +240,13 @@ div.bevel {width: 3rem; height: 3rem; position: absolute; }
 	div.bevel:after {content:""; position:absolute; top: 0; border-top: 4px solid white; width: 141.4%; }
 
 	div.topleft:after,
-	div.bottomright:after {transform: rotate(135deg); transform-origin: top left; }
+	div.bottomright:after {transform: rotate(135deg); transform-origin: top left; 
+							-ms-transform: rotate(135deg); -ms-transform-origin: top left; }
 	div.topleft {left: calc(3rem + 3px); top: 3px; }
 	div.bottomright {right: -3rem; bottom: 0; }
 	div.topright:after,
-	div.bottomleft:after {transform: rotate(45deg); transform-origin: top left; }
+	div.bottomleft:after {transform: rotate(45deg); transform-origin: top left;
+							-ms-transform: rotate(45deg); -ms-transform-origin: top left; }
 	div.topright {right: 0; top: 0; }
 	div.bottomleft {left: 3px; bottom: 3px; }
 
@@ -419,6 +423,7 @@ a:active {outline: 0; }
 	z-index: 99998;
 	
 	transform-origin: 4px 0px;
+	-ms-transform-origin: 4px 0px;
 	
 	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
 	          background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
@@ -427,16 +432,19 @@ a:active {outline: 0; }
 
 #menuToggle > span:nth-of-type(1) {
 	transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
 }
 
 #menuToggle > span:nth-of-type(2) {
 	transform-origin: 0% 100%;
+	-ms-transform-origin: 0% 100%;
 }
 
 /* Transform all the slices of hamburger into a crossmark. */
 #menuToggle > input:checked ~ span {
 	opacity: 1;
 	transform: rotate(45deg) translate(1px, -2px);
+	-ms-transform: rotate(45deg) translate(1px, -2px);
 	background: #fff;
 }
 
@@ -444,12 +452,14 @@ a:active {outline: 0; }
 #menuToggle > input:checked ~ span:nth-of-type(3) {
 	opacity: 0;
 	transform: rotate(0deg) scale(0.2, 0.2);
+	-ms-transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 /* Oh yeah and the last one should go the other direction */
 #menuToggle > input:checked ~ span:nth-of-type(2) {
 	opacity: 1;
 	transform: rotate(-45deg) translate(-10px, 13px);
+	-ms-transform: rotate(-45deg) translate(-10px, 13px);
 }
 
 /* Make this absolute positioned at the top left of the screen */
@@ -469,7 +479,9 @@ a:active {outline: 0; }
 	/* to stop flickering of text in safari */
 	
 	transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
 	transform: translate(-100%, 0);
+	-ms-transform: translate(-100%, 0);
 	
 	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
@@ -480,6 +492,7 @@ a:active {outline: 0; }
 /* And let's fade it in from the left */
 #menuToggle > input:checked ~ #menuHolder {
 	transform: scale(1.0, 1.0);
+	-ms-transform: scale(1.0, 1.0);
 	opacity: 1;
 	z-index: 99996;
 }
@@ -564,7 +577,7 @@ a:active {outline: 0; }
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
-.site-main .post-navigation {margin: 0 0 1.5em; overflow: hidden; }
+.site-main .post-navigation {margin: 0 0 1.5em; overflow: hidden; clear: both; }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,

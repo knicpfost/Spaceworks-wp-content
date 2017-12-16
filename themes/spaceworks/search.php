@@ -9,18 +9,24 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php
+		<?php 
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'spaceworks' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Search Results: %s', 'spaceworks' ), '<span class="title-contrast">' . get_search_query() . '</span>' );
 				?></h1>
 			</header><!-- .page-header -->
+			
+			<div class="newsletter-signup-cta">
+				<?php get_template_part( 'template-parts/newsletter', 'subscribe' ); ?>
+			</div><!-- End newsletter-signup-cta -->
+			
+			<div id="masonry-layout" data-columns>
 
 			<?php
 			/* Start the Loop */
@@ -34,7 +40,11 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
+			?>
 
+			</div><!-- #masonry-layout -->
+
+			<?php
 			the_posts_navigation();
 
 		else :
@@ -44,8 +54,7 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
-<?php
-get_sidebar();
+<?php get_sidebar();
 get_footer();
