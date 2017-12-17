@@ -764,8 +764,11 @@ h3.entry-title {margin-top: 0.4em; margin-bottom: 0.4em; }
 .entry-content table { }
 
 
-.pagebanner {display: flex; margin: 2em 0; }
-	.pagebanner-content {width: 50%; color: #fff; background-color: black; padding: 2em; }
+.pagebanner {margin: 2em 0; }
+	.pagebanner > .pagebanner-content,
+	.pagebanner > .pagebanner-image {display: table-cell; width: 50%; }
+	
+	.pagebanner-content {color: #fff; background-color: black; padding: 2em; }
 		.pagebanner-content h2 {font-weight: 900; }
 		.pagebanner-content a,
 		.pagebanner-content a:visited,
@@ -776,7 +779,7 @@ h3.entry-title {margin-top: 0.4em; margin-bottom: 0.4em; }
 	.pagebanner.color-purple .pagebanner-content {background-color: #AD50D3; }
 	.pagebanner.color-orange .pagebanner-content {background-color: #F15A33; }
 	
-	.pagebanner-image {display: block; width: 50%; background-size: cover; background-position: center center; }
+	.pagebanner-image {background-size: cover; background-position: center center; }
 
 
 /*--------------------------------------------------------------
@@ -1002,10 +1005,8 @@ object {max-width: 100%; }
 
 	.featured-buttons {margin: 1rem 0 2rem; }
 	
-	.pagebanner {flex-direction: column; }
-
-	.pagebanner-content,
-	.pagebanner-image {width: 100%; }
+	.pagebanner > .pagebanner-content,
+	.pagebanner > .pagebanner-image {display: block; width: 100%; } 
 	
 	.pagebanner-image {min-height: 250px; }
 	
