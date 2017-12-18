@@ -4,6 +4,7 @@ Donate link: https://www.paypal.me/nico23
 Tags: YouTube, Vimeo, lazyload, thumbnail, video, responsive, embeds, video-embedder, iframe, lightweight, simplicity, shortcodes
 Requires at least: 4.4.0
 Tested up to: 4.9.2
+Requires PHP: 5.3
 Stable tag: trunk
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -198,7 +199,14 @@ This plugins embed is considered as 'custom player' by YouTube so you have to pa
 * [ARVE Pro addon changelog](https://nextgenthemes.com/plugins/advanced-responsive-video-embedder-pro/changelog/)
 * [ARVE AMP addon changelog](https://nextgenthemes.com/plugins/arve-amp/)
 
+### 2017-12-17 - 8.7.4 ###
+
+* Fix: Removed URL validation because it fails with some weird URLs.
+
 ### 2017-12-13 - 8.7.3 ###
+
+* Updated EDD Plugin Updater class.
+* Fixed some links in the readme.
 
 ### 2017-08-16 - 8.7.2 ###
 
