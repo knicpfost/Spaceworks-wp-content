@@ -12,6 +12,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('masonry-item'); ?>>
 	<div class="masonry-item-content">
 		
+		<?php 
+			$permalink_url = esc_url( get_permalink() );
+		?>
+		
 		<?php if ( has_post_thumbnail() ) { ?>
 			<?php echo '<a href="' . $permalink_url . '" rel="bookmark">'; ?>
 				<?php the_post_thumbnail('media_featured'); ?>
