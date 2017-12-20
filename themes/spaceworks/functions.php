@@ -41,6 +41,23 @@ function spaceworks_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+	
+	/**
+	 * Add new Image Sizes
+	 */
+	add_image_size( 'medium_large', '768', '9999', false );
+	add_image_size( 'media_featured', '600', '300', true );
+	add_image_size( 'media_hd', '1920', '9999', false );
+	
+	/**
+	 * Make "Media HD" show up in image size choices
+	 */
+	add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+	function my_custom_sizes( $sizes ) {
+	    return array_merge( $sizes, array(
+	        'media_hd' => __( 'Media HD' )
+	    ) );
+	}
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -156,22 +173,6 @@ function spaceworks_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'spaceworks_scripts' );
-
-
-/**
- * Add media_featured Image Size
- */
-add_image_size( 'medium_large', '768', '9999', false );
-add_image_size( 'media_featured', '600', '300', true );
-add_image_size( 'media_hd', '1920', '9999', false );
-
-
-add_filter( 'image_size_names_choose', 'my_custom_sizes' );
-function my_custom_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-        'media_hd' => __( 'Large HD' )
-    ) );
-}
 
 
 /**
