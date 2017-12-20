@@ -108,7 +108,7 @@ add_action( 'after_setup_theme', 'spaceworks_setup' );
  * @global int $content_width
  */
 function spaceworks_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'spaceworks_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'spaceworks_content_width', 1920 );
 }
 add_action( 'after_setup_theme', 'spaceworks_content_width', 0 );
 
