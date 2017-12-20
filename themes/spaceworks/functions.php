@@ -161,9 +161,9 @@ add_action( 'wp_enqueue_scripts', 'spaceworks_scripts' );
 /**
  * Add media_featured Image Size
  */
-add_image_size( 'medium_large', '768', '0', false );
+add_image_size( 'medium_large', '768', '9999', false );
 add_image_size( 'media_featured', '600', '300', true );
-add_image_size( 'media_hd', '1920', '0', false );
+add_image_size( 'media_hd', '1920', '9999', false );
 
 
 /**
