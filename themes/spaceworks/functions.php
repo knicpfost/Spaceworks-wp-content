@@ -166,6 +166,14 @@ add_image_size( 'media_featured', '600', '300', true );
 add_image_size( 'media_hd', '1920', '9999', false );
 
 
+add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+function my_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'media_hd' => __( 'Large HD' )
+    ) );
+}
+
+
 /**
  * Implement custom HomeSlides post type
  */
