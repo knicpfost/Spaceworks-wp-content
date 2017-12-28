@@ -909,7 +909,7 @@ object {max-width: 100%; }
 	#menuDonate {position: fixed; top: 20px; right: 20px; left: initial; -webkit-transform: none; -ms-transform: none; transform: none; }
 	#menuBacker {height: 65px; width: 100vw; }
 		#menuBacker:after {height: 0; display: none; }
-	#menuHolder .partners {position: relative; margin-top: 3em; width: calc(100vw - 90px); }
+	#menuHolder .partners {position: relative; margin-top: 4em; width: calc(100vw - 90px); bottom: auto; }
 	
 	.main-navigation ul li:hover > ul, 
 	.main-navigation ul li.focus > ul,
